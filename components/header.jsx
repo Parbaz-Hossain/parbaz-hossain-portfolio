@@ -3,15 +3,16 @@ import {Button} from "./ui/button";
 
 // Importing the Nav component
 import Nav from "./nav";
+import MobileNav from "./mobilenav";
 
 const Header = () => {
     return ( 
-        <header className="py-8 xl:py-12 text:white">
+        <header className="py-8 xl:py-12 text-white">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
                  <Link href="/">
                     <h1 className="text-4xl font-semibold">
-                        Parbaz Hossain<span className="text-accent">.</span>
+                        Parbaz<span className="text-accent">.</span>
                     </h1>
                  </Link>
                 {/* Desktop nav */}
@@ -25,7 +26,7 @@ const Header = () => {
                 </div>
                 {/* Mobile nav */}
                 <div className="xl:hidden">
-                    Mobile Nav
+                    <MobileNav />
                 </div>
             </div>
         </header>
