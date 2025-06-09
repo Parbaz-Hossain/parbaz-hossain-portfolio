@@ -9,25 +9,25 @@ const services = [
         num : "01",
         title: "Web Development",
         description: "Building responsive and dynamic websites using modern technologies.",
-        link: "/services/web-development"
+        href: "/services/web-development"
     },
     {
         num : "02",
         title: "Mobile App Development",
         description: "Creating user-friendly mobile applications for iOS and Android.",
-        link: "/services/mobile-app-development"
+        href: "/services/mobile-app-development"
     },
     {
         num : "03",
         title: "UI/UX Design",
         description: "Designing intuitive user interfaces and enhancing user experiences.",
-        link: "/services/ui-ux-design"
+        href: "/services/ui-ux-design"
     },
     {
         num : "04",
         title: "SEO Optimization",
         description: "Improving website visibility and search engine rankings.",
-        link: "/services/seo-optimization"
+        href: "/services/seo-optimization"
     }
 ]
 
@@ -39,7 +39,7 @@ const Services = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2.4, duration: 0.4, ease: "easeIn" }}
-            className="grid md:grid-cols-2 gap-8"
+            className="grid md:grid-cols-2 gap-6"
             >
                 {services.map((service, index) => {
                     return (
@@ -48,12 +48,20 @@ const Services = () => {
                             className="flex-1 flex flex-col justify-center gap-6 group p-4 border border-white/10 rounded-md hover:border-accent transition-all duration-500"
                         >
                             {/* Top */}
-                            <div className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45">
-                            <BsArrowDownRight className="text-primary text-3xl" />
+                            <div className="w-full flex justify-between items-center">
+                                <div className="text-3xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
+                                    {service.num}
+                                </div>
+                                <Link 
+                                href={service.href}
+                                className="w-[50px] h-[50px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
+                                >                                    
+                                    <BsArrowDownRight className="text-primary text-3xl" />
+                                </Link>
                             </div>
 
                             {/* Title */}
-                            <h2 className="text-[32px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                            <h2 className="text-[24px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
                             {service.title}
                             </h2>
 

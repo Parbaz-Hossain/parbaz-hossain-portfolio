@@ -10,11 +10,11 @@ const Home = () => {
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-4 xl:pb-16">
             {/* text */}
             <div className="text-center xl:text-left order-2 xl:order-none">
               <span className="text-xl"> Software Engineer</span>
-              <h1 className="h2 mb-6">
+              <h1 className="h2 mb-6 mt-4">
                 Hello I&apos;m <br /> <span className="text-accent">Parbaz Hossain</span>
               </h1>
               <p className="max-w-[500px] mb-9 text-white/80">
