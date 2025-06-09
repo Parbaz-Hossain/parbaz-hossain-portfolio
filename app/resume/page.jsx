@@ -163,15 +163,15 @@ const Resume = () => {
                 { /* Tabs Content */}
                 <div className="min-h-[70vh] w-full">
                     { /* Experience Section */}
-                    <TabsContent value="experience" className="h-full w-full">
+                    <TabsContent value="experience" className="w-full">
                         <div className="flex flex-col gap-[30px] text-center lg:text-left h-full">
                             <p className="text-4xl font-bold">{experience.title}</p>
                             <p className="max-w-[600px] text-white/60 mx-auto lg:mx-0">
                             {experience.description}
                             </p>               
 
-                            <ScrollArea className="h-[400px]">
-                                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                            <ScrollArea className="h-[280px]">
+                                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[10px]">
                                     {experience.jobs.map((item, index) => {
                                         return (
                                             <li
@@ -196,14 +196,14 @@ const Resume = () => {
                     </TabsContent>
 
                     { /* Education Section */}
-                   <TabsContent value="education" className="h-full w-full">
-                        <div className="flex flex-col gap-[30px] text-center lg:text-left h-full">
+                   <TabsContent value="education" className="w-full">
+                        <div className="flex flex-col gap-[30px] text-center lg:text-left">
                             <p className="text-4xl font-bold">{education.title}</p>
                             <p className="max-w-[600px] text-white/60 mx-auto lg:mx-0">
                             {education.description}
                             </p>               
 
-                            <ScrollArea className="h-[400px] overflow-y-auto">
+                            <ScrollArea className="h-[280px]">
                                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                                     {education.degrees.map((item, index) => {
                                         return (
@@ -229,7 +229,7 @@ const Resume = () => {
                     </TabsContent>
 
                     { /* Skills Section */}
-                    <TabsContent value="skills" className="w-full h-full">
+                    <TabsContent value="skills" className="w-full">
                         <div className="flex flex-col gap-[30px]">
                             <div className="flex flex-col gap-[30px] text-center xl:text-left">
                                 <h3 className="text-4xl font-bold">{skills.title}</h3>
@@ -244,7 +244,7 @@ const Resume = () => {
                                     <li key={index}>
                                         <TooltipProvider delayDuration={100}>
                                         <Tooltip>
-                                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                                            <TooltipTrigger className="w-full h-[120px] bg-[#232329] rounded-xl flex justify-center items-center group">
                                             <div className="text-6xl group-hover:text-accent transition-all duration-300">
                                                 {skill.icon}
                                             </div>
