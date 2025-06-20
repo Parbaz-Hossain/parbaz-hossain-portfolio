@@ -7,27 +7,27 @@ import {motion} from "framer-motion";
 const services = [
     {
         num : "01",
-        title: "Web Development",
-        description: "Building responsive and dynamic websites using modern technologies.",
-        href: "/services/web-development"
+        title: "Application Development",
+        description: "Building high-performance desktop and web applications using modern frameworks like ASP.NET Core.",
+        href: "/services/app-development"
     },
     {
         num : "02",
-        title: "Mobile App Development",
-        description: "Creating user-friendly mobile applications for iOS and Android.",
-        href: "/services/mobile-app-development"
+        title: "Database Development",
+        description: "Designing optimized, secure, and scalable SQL databases with advanced query structuring, indexing.",
+        href: "/services/database-development"
     },
     {
         num : "03",
-        title: "UI/UX Design",
-        description: "Designing intuitive user interfaces and enhancing user experiences.",
-        href: "/services/ui-ux-design"
+        title: "Web Development",
+        description: "Creating responsive, fast, and interactive websites with clean frontend architecture and powerful backend APIs.",
+        href: "/services/web-development"
     },
     {
         num : "04",
-        title: "SEO Optimization",
-        description: "Improving website visibility and search engine rankings.",
-        href: "/services/seo-optimization"
+        title: "Custom Software Development",
+        description: "Engineering tailor-made software solutions that align with unique business needs, from enterprise ERPs.",
+        href: "/services/custom-software-development"
     }
 ]
 

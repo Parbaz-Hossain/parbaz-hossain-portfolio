@@ -35,8 +35,44 @@ const info = [
 ];
 
 import { motion } from "framer-motion";
+import React, { useState } from "react";
+
 
 const Contact = () => {
+
+const [firstname, setFirstname] = useState("");
+const [lastname, setLastname] = useState("");
+const [email, setEmail] = useState("");
+const [phone, setPhone] = useState("");
+const [service, setService] = useState("");
+const [message, setMessage] = useState("");
+
+// This function handles the form submission via a POST request to the API endpoint.
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const result = await fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      firstname,
+      lastname,
+      email,
+      phone,
+      service,
+      message,
+    }),
+  });
+
+  const data = await result.json();
+
+  if (data.success) {
+    alert('✅ Message sent successfully!');
+  } else {
+    alert('❌ Failed to send message.');
+  }
+};
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -50,7 +86,7 @@ const Contact = () => {
             <div className="flex flex-col xl:flex-row gap-[30px]">
                 {/* form */}
                 <div className="xl:h-[50%] order-2 xl:order-none">
-                    <form className="flex flex-col gap-2 p-4 bg-[#27272c] rounded-xl">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-2 p-4 bg-[#27272c] rounded-xl">
                         <h3 className="text-4xl text-accent">Let's work together</h3>
                         <p className="text-white/60">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nihil
@@ -59,24 +95,24 @@ const Contact = () => {
 
                         {/* input */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <Input type="firstname" placeholder="Firstname" />
-                            <Input type="lastname" placeholder="Lastname" />
-                            <Input type="email" placeholder="Email address" />
-                            <Input type="phone" placeholder="Phone number" />
+                            <Input type="text" placeholder="Firstname" value={firstname} onChange={(e) => setFirstname(e.target.value)} />
+                            <Input type="text" placeholder="Lastname" value={lastname} onChange={(e) => setLastname(e.target.value)} />
+                            <Input type="email" placeholder="Email address" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <Input type="text" placeholder="Phone number" value={phone} onChange={(e) => setPhone(e.target.value)} />
                         </div>
 
                         {/* select */}
-                        <Select>
+                        <Select onValueChange={(val) => setService(val)}>
                           <SelectTrigger className="w-full">
                             <SelectValue placeholder="Select a service" />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectGroup>
                               <SelectLabel>Select a service</SelectLabel>
-                              <SelectItem value="est">Backend</SelectItem>
-                              <SelectItem value="bst">Frontend</SelectItem>
-                              <SelectItem value="cst">Full-Stack</SelectItem>
-                              <SelectItem value="mst">Web Development</SelectItem>
+                              <SelectItem value="Backend">Backend</SelectItem>
+                              <SelectItem value="Frontend">Frontend</SelectItem>
+                              <SelectItem value="Full-Stack">Full-Stack</SelectItem>
+                              <SelectItem value="Web Development">Web Development</SelectItem>
                             </SelectGroup>
                           </SelectContent>
                         </Select>
@@ -85,6 +121,8 @@ const Contact = () => {
                         <Textarea
                           className="h-[100px]"
                           placeholder="Type your message here."
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
                         />
 
                         {/* btn */}

@@ -1,7 +1,7 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaPython, FaAngular} from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaAngular} from "react-icons/fa";
+import { SiDotnet, SiPostgresql, SiGit } from "react-icons/si";
 
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -28,7 +28,7 @@ const about= {
         },
         {
             fieldName : "Experience",
-            fieldValue: "4.6 Years"
+            fieldValue: "5 Years"
         },
         {
             fieldName : "Nationality",
@@ -56,10 +56,10 @@ const experience = {
     description: "I have worked on various projects, ranging from small web applications to large-scale enterprise solutions. My experience includes both front-end and back-end development, with a strong focus on user experience and performance.",
     jobs: [
         {
-            company: "Pinovation Tech Ltd.",
-            position: "Jr. Software Engineer",
-            duration: "Oct 2020 - July 2023",
-            description: "Worked on developing and maintaining web applications using ASP.NET Core and React. Collaborated with cross-functional teams to deliver high-quality software solutions."
+            company: "Empowering Energy",
+            position: "Software Engineer",
+            duration: "October 2024 - Present",
+            description: "Design and developing web applications using ASP.NET Core and Microservices architecture. Focused on improving code quality and implementing best practices."
         },
         {
             company: "Systech Digital Limited",
@@ -68,10 +68,10 @@ const experience = {
             description: "Developed and maintained web applications using ASP.NET Core and Angular. Implemented RESTful APIs and integrated third-party services."
         },
         {
-            company: "Empowering Energy",
-            position: "Software Engineer",
-            duration: "October 2024 - Present",
-            description: "Design and developing web applications using ASP.NET Core and Microservices architecture. Focused on improving code quality and implementing best practices."
+            company: "Pinovation Tech Ltd.",
+            position: "Jr. Software Engineer",
+            duration: "Oct 2020 - July 2023",
+            description: "Worked on developing and maintaining web applications using ASP.NET Core and React. Collaborated with cross-functional teams to deliver high-quality software solutions."
         }
     ]
 };
@@ -112,8 +112,20 @@ const education = {
 // Skills data
 const skills = {
     title: "My Skills",
-    description: "I have a diverse skill set that includes front-end and back-end development, UI/UX design, and project management. I am proficient in various programming languages and frameworks, and I continuously strive to learn new technologies.",
-    skillList: [    
+    description: "I have a diverse skill set that includes front-end and back-end development, Database design, and project management. I am proficient in various programming languages and frameworks, and I continuously strive to learn new technologies.",
+    skillList: [  
+        { 
+            icon: <img src="/assets/icons/csharp.png" alt="C#" className="w-20 h-20" />, 
+            name: "C#" 
+        },
+        { 
+            icon: <SiDotnet />, 
+            name: ".NET Core" 
+        },                
+        { 
+            icon: <img src="/assets/icons/mssql.png" alt="MSSQL" className="w-20 h-20" />, 
+            name: "MSSQL" 
+        },  
         {
             icon:<FaHtml5 />,
             name: "HTML5"
@@ -127,12 +139,12 @@ const skills = {
             name: "JavaScript"
         },
         {
-            icon:<FaReact />,
-            name: "React.js"
-        },
-        {
             icon: <FaAngular />,
             name: "Angular"
+        },
+        {
+            icon: <SiGit />,
+            name: "Git"
         }
     ]
 }
@@ -166,9 +178,7 @@ const Resume = () => {
                     <TabsContent value="experience" className="w-full">
                         <div className="flex flex-col gap-[30px] text-center lg:text-left h-full">
                             <p className="text-4xl font-bold">{experience.title}</p>
-                            <p className="max-w-[600px] text-white/60 mx-auto lg:mx-0">
-                            {experience.description}
-                            </p>               
+                            <p className="max-w-[800px] text-white/60 mx-auto lg:mx-0">{experience.description}</p>               
 
                             <ScrollArea className="h-[280px]">
                                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[10px]">
@@ -199,9 +209,7 @@ const Resume = () => {
                    <TabsContent value="education" className="w-full">
                         <div className="flex flex-col gap-[30px] text-center lg:text-left">
                             <p className="text-4xl font-bold">{education.title}</p>
-                            <p className="max-w-[600px] text-white/60 mx-auto lg:mx-0">
-                            {education.description}
-                            </p>               
+                            <p className="max-w-[800px] text-white/60 mx-auto lg:mx-0">{education.description}</p>               
 
                             <ScrollArea className="h-[280px]">
                                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
@@ -233,9 +241,7 @@ const Resume = () => {
                         <div className="flex flex-col gap-[30px]">
                             <div className="flex flex-col gap-[30px] text-center xl:text-left">
                                 <h3 className="text-4xl font-bold">{skills.title}</h3>
-                                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
-                                    {skills.description}
-                                </p>
+                                <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">{skills.description}</p>
                             </div>
 
                             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
@@ -265,8 +271,8 @@ const Resume = () => {
                     <TabsContent value="about" className="w-full text-center xl:text-left">
                         <div className="flex flex-col gap-[30px]">
                             <h3 className="text-4xl font-bold">{about.title}</h3>
-                            <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
-                            <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                            <p className="max-w-[800px] text-white/60 mx-auto xl:mx-0">{about.description}</p>
+                            <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[700px] mx-auto xl:mx-0">
                                 {about.info.map((item, index) => {
                                    return(
                                     <li 
