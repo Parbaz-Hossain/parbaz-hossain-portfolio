@@ -6,6 +6,8 @@ import { Weight } from "lucide-react";
 import Header from "@/components/header";
 import PageTransition from "@/components/pagetransition";
 import StairTransition from "@/components/stairtransition";
+import RouteCurtain from "@/components/route-curtain";
+import RouteMosaic from "@/components/route-mosaic";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -24,8 +26,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={jetbrainsMono.variable} suppressHydrationWarning>
         <Header />
-        <StairTransition />
-        <PageTransition>{children}</PageTransition> 
+        {/* <StairTransition />
+        <PageTransition>{children}</PageTransition>  */}
+        {/* <RouteCurtain>{children}</RouteCurtain> */}
+        <RouteMosaic>{children}</RouteMosaic>
       </body>
     </html>
   );
