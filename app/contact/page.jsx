@@ -89,8 +89,8 @@ const handleSubmit = async (e) => {
                     <form onSubmit={handleSubmit} className="flex flex-col gap-2 p-4 bg-[#27272c] rounded-xl">
                         <h3 className="text-4xl text-accent">Let's work together</h3>
                         <p className="text-white/60">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nihil
-                        sapiente pariatur id totam.
+                        I’m open to collaboration, freelance projects, or full-time opportunities. 
+                        Let’s connect and build something impactful together.
                         </p>
 
                         {/* input */}
