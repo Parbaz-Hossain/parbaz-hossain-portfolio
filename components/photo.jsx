@@ -54,7 +54,7 @@ const Photo = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2.4, duration: 0.4, ease: "easeInOut" }}
-                className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] xl:w-[400px] xl:h-[400px] mix-blend-lighten z-10">
+                className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[360px] md:h-[360px] xl:w-[400px] xl:h-[400px] z-10">
                 <Image
                     src="/assets/Parbaz-Hossain.png"
                     priority
